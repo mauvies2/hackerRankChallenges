@@ -54,12 +54,14 @@ console.log(
   )
 );
 
+// FIND THE LONGEST WORD IN A STRING
 function findLongestWordLength(str) {
   return Math.max(...str.split(" ").map((word) => word.length));
 }
 
 findLongestWordLength("The quick brown fox jumped over the lazy dog");
 
+// RETURN AN ARRAY WITH THE LARGEST NUMBER OF EACH NESTED-ARRAY
 function largestOfFour(arr) {
   let maxNum = 0;
   let result = [];
@@ -87,12 +89,14 @@ largestOfFour([
   [-72, -3, -17, -10],
 ]);
 
+// TARGET A PATTERN AT THE END OF THE STRING
 function confirmEnding(str, target) {
   return str.slice(str.length - target.length) === target;
 }
 
 confirmEnding("Bastian", "n");
 
+// REPEAT STRING NUMBERS (NUM) OF TIMES
 function repeatStringNumTimes(str, num) {
   let result = "";
   if (num > 0) {
@@ -114,3 +118,25 @@ function truncateString(str, num) {
 }
 
 truncateString("A-tisket a-tasket A green and yellow basket", 8);
+
+// FIND ELEMENT IN A STRING THAT MEETS CONDITIONS
+function findElement(arr, func) {
+  let num;
+  for (let i = 0; i < arr.length; i++) {
+    if (func(arr[i])) {
+      num = arr[i];
+      return num;
+    }
+  }
+  return num;
+}
+
+function findElement(arr, func) {
+  return arr.find(func);
+}
+// PRIME
+function findElement(arr, func) {
+  return arr[arr.map(func).indexOf(true)];
+}
+
+findElement([1, 3, 5, 8, 9, 10], (num) => num % 2 === 0);
