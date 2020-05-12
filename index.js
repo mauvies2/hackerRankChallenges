@@ -58,3 +58,19 @@ function titleCase(str) {
 function titleCase(str) {
   return str.toLowerCase().replace(/(^|\s)\S/g, (L) => L.toUpperCase());
 }
+
+// INTRODUCE AN ARRAY INTO ANOTHER ARRAY
+function frankenSplice(arr1, arr2, n) {
+  let localArr = arr2.slice();
+  localArr.splice(n, 0, ...arr1);
+  return localArr;
+}
+
+// REMOVE ALL FALSY VALUES FROM AN ARRAY (FILTER USED IN THIS CASE)
+function bouncer(arr) {
+  let newArr = arr.filter((x) => Boolean(x));
+  console.log(newArr);
+  return newArr;
+}
+
+bouncer([7, "ate", "", false, 9]);
