@@ -140,3 +140,42 @@ function findElement(arr, func) {
 }
 
 findElement([1, 3, 5, 8, 9, 10], (num) => num % 2 === 0);
+
+// FIND INDEX OF ELEMENT num IN ARR WHEN SORTED
+function getIndexToIns(arr, num) {
+  arr.push(num);
+  arr.sort((x, y) => x - y);
+  return arr.indexOf(num);
+}
+
+getIndexToIns([2, 5, 10], 15);
+
+// THE FIRTS ELEMENT OF THE ARRAY CONTAINS ALL OF THE LETTERS
+// OF THE STRING IN THE SECOND ELEMENT OF THE ARRAY
+function mutation(arr) {
+  var test = arr[1].toLowerCase();
+  var target = arr[0].toLowerCase();
+  for (var i = 0; i < test.length; i++) {
+    if (target.indexOf(test[i]) < 0) return false;
+  }
+  return true;
+}
+
+function mutation(arr) {
+  return arr[1]
+    .toLowerCase()
+    .split("")
+    .every(function (letter) {
+      return arr[0].toLowerCase().indexOf(letter) != -1;
+    });
+}
+
+function mutation([target, test], i = 0) {
+  target = target.toLowerCase();
+  test = test.toLowerCase();
+  return i >= test.length
+    ? true
+    : !target.includes(test[i])
+    ? false
+    : mutation([target, test], i + 1);
+}
