@@ -42,17 +42,17 @@ function filteredArray(arr, elem) {
   return newArr;
 }
 
-console.log(
-  filteredArray(
-    [
-      [3, 2, 3],
-      [1, 6, 3],
-      [3, 13, 26],
-      [19, 3, 9],
-    ],
-    3
-  )
-);
+// console.log(
+//   filteredArray(
+//     [
+//       [3, 2, 3],
+//       [1, 6, 3],
+//       [3, 13, 26],
+//       [19, 3, 9],
+//     ],
+//     3
+//   )
+// );
 
 // FIND THE LONGEST WORD IN A STRING
 function findLongestWordLength(str) {
@@ -179,3 +179,37 @@ function mutation([target, test], i = 0) {
     ? false
     : mutation([target, test], i + 1);
 }
+
+function staircase(n) {
+  for (let i = 0; i < n; i++) {
+    let draw = "";
+    let spaces = "";
+    for (let j = n; j > 0; j--) {
+      j > i + 1 ? (spaces += " ") : (draw += "#");
+    }
+    console.log(spaces + draw);
+  }
+}
+
+// staircase(4);
+
+function miniMaxSum(arr) {
+  arr.sort();
+  let result = arr.reduce((a, b) => a + b);
+  console.log(`${result - arr[arr.length - 1]} ${result - arr[0]}`);
+}
+
+// miniMaxSum([1, 3, 2, 4, 5]);
+
+function birthdayCakeCandles(ar) {
+  ar.sort();
+  let counter = 0;
+  for (let i = arr.length - 1; i >= 0; i--) {
+    if (arr[i] === arr[arr.length - 1]) {
+      result++;
+    }
+  }
+  return counter;
+}
+
+birthdayCakeCandles(`4\n3 1 2 3 3`);
