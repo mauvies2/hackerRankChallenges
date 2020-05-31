@@ -180,6 +180,24 @@ function mutation([target, test], i = 0) {
     : mutation([target, test], i + 1);
 }
 
+function chunkArrayInGroups(arr, size) {
+  let result = [];
+  let array = [];
+  for (let i = 0; i < arr.length; i++) {
+    array.push(arr[i]);
+    if ((i + 1) % size === 0) {
+      result.push(array);
+      array = [];
+    }
+  }
+  if (array.length > 0) {
+    result.push(array);
+  }
+  return result;
+}
+
+chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4);
+
 function staircase(n) {
   for (let i = 0; i < n; i++) {
     let draw = "";
