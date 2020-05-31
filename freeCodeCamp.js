@@ -202,14 +202,26 @@ function miniMaxSum(arr) {
 // miniMaxSum([1, 3, 2, 4, 5]);
 
 function birthdayCakeCandles(ar) {
-  ar.sort();
   let counter = 0;
   for (let i = arr.length - 1; i >= 0; i--) {
     if (arr[i] === arr[arr.length - 1]) {
-      result++;
+      counter++;
     }
   }
+  console.log(counter);
   return counter;
 }
 
-birthdayCakeCandles(`4\n3 1 2 3 3`);
+// birthdayCakeCandles(`3 1 2 3 3`);
+
+function gradingStudents(grades) {
+  for (var i = 0; i < grades.length; i++) {
+    if (grades[i] > 37 && grades[i] % 5 >= 3) {
+      console.log(grades[i]);
+      grades[i] += 5 - (grades[i] % 5);
+    }
+  }
+  return grades;
+}
+
+gradingStudents([73, 67, 38, 33]);
