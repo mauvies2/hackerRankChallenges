@@ -243,3 +243,8 @@ function gradingStudents(grades) {
 }
 
 gradingStudents([73, 67, 38, 33]);
+
+let a = [1, 2];
+a[50] = 3;
+
+console.log(a);
