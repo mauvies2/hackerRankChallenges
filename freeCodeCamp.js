@@ -248,3 +248,17 @@ let a = [1, 2];
 a[50] = 3;
 
 console.log(a);
+
+function Animal() {}
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function () {
+    console.log("nom nom nom");
+  },
+};
+
+// Only change code below this line
+
+let duck; // Change this line
+let beagle; // Change this line
